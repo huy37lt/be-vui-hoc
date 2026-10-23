@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bé Vui Học – Lớp 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff8e7;--card:#fff;--text:#2b2d42;--muted:#6b6f85;--shadow:rgba(43,45,66,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1f33;--card:#2a2e4a;--text:#f4f4fb;--muted:#a9adc9;--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#1c1f33;--card:#2a2e4a;--text:#f4f4fb;--muted:#a9adc9;--shadow:rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Baloo 2","Nunito","Segoe UI",system-ui,sans-serif;font-size:18px;min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:14px 16px 40px}
+header{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.logo .m{font-size:46px;animation:bob 2.5s ease-in-out infinite}
+.logo h1{margin:0;font-size:26px;line-height:1;font-weight:800}
+.logo small{color:var(--muted);font-size:14px;font-weight:500}
+.stars{background:var(--card);border-radius:99px;padding:6px 16px;font-weight:800;box-shadow:0 4px 0 var(--shadow);white-space:nowrap}
+.hello{margin:18px 0 8px;background:linear-gradient(135deg,#ffd166,#ff9f68);color:#3a2300;border-radius:24px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 6px 0 var(--shadow)}
+.hello .m{font-size:52px}.hello b{font-size:22px;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:14px}
+.sub{border:0;font:inherit;color:#fff;background:var(--c);border-radius:26px;padding:18px 12px 14px;cursor:pointer;box-shadow:0 7px 0 rgba(0,0,0,.22);transition:transform .12s;text-align:center}
+.sub:hover{transform:translateY(-4px) rotate(-1deg)}.sub:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.22)}
+.sub .e{font-size:54px;display:block;line-height:1.1}.sub b{font-size:22px;display:block}.sub span.d{font-size:14px;opacity:.95;display:block;line-height:1.2}
+.sub .s{margin-top:6px;font-size:14px;background:rgba(255,255,255,.28);border-radius:99px;display:inline-block;padding:0 10px}
+.card{background:var(--card);border-radius:28px;padding:22px 18px;box-shadow:0 8px 0 var(--shadow);margin-top:16px;text-align:center}
+.top{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.back{border:0;font:inherit;background:var(--card);color:var(--text);border-radius:99px;padding:6px 16px;cursor:pointer;box-shadow:0 4px 0 var(--shadow);font-weight:700}
+.bar{flex:1;height:14px;border-radius:99px;background:var(--shadow);overflow:hidden}.bar i{display:block;height:100%;background:var(--c);width:0;transition:width .4s}
+.big{font-size:84px;line-height:1.1;margin:6px 0}
+.q{font-size:28px;font-weight:800;margin:4px 0 16px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.opt{border:3px solid var(--c);background:transparent;color:var(--text);font:inherit;font-size:26px;font-weight:800;border-radius:20px;padding:14px 8px;cursor:pointer;transition:transform .1s}
+.opt:hover:not(:disabled){background:var(--c);color:#fff;transform:scale(1.04)}
+.opt.ok{background:#2fbf71!important;border-color:#2fbf71;color:#fff!important;animation:pop .4s}
+.opt.no{background:#ef476f!important;border-color:#ef476f;color:#fff!important;animation:shake .35s}
+.fb{min-height:44px;margin:14px 0 4px;font-size:22px;font-weight:800}
+.next,.btn{border:0;font:inherit;font-size:22px;font-weight:800;color:#fff;background:var(--c);border-radius:99px;padding:10px 30px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.25);margin:4px}
+.res .big{font-size:96px}.res .st{font-size:46px;letter-spacing:6px}
+.keys{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.key{flex:1;max-width:84px;height:210px;border:0;border-radius:0 0 16px 16px;font:inherit;font-weight:800;color:#fff;font-size:18px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.key:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.fall{position:fixed;top:-60px;font-size:34px;pointer-events:none;animation:fall 2.4s linear forwards;z-index:9}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.tab{border:3px solid var(--c);background:transparent;color:var(--text);font:inherit;font-weight:800;border-radius:99px;padding:6px 18px;cursor:pointer}.tab.on{background:var(--c);color:#fff}
+.tw{overflow-x:auto;padding-bottom:8px}.tb{display:grid;grid-template-columns:repeat(8,minmax(96px,1fr));gap:3px;min-width:780px}
+.tc{border-radius:8px;padding:7px 2px;font-weight:700;font-size:16px;white-space:nowrap;cursor:pointer;color:#2b2d42;transition:transform .1s}.tc.g{background:#c5dba0}.tc.y{background:#fff7a8}.tc.on{background:var(--c);color:#fff;transform:scale(1.08)}.tc.e{visibility:hidden}
+.tip{background:var(--shadow);border-radius:18px;padding:12px 14px;text-align:left;margin:12px 0}
+.step{text-align:left;border-left:8px solid var(--c);background:var(--shadow);border-radius:16px;padding:10px 14px;margin:10px 0}.step b{color:var(--c);font-size:21px}.step ul{margin:4px 0 0;padding-left:22px}
+.hide{display:none}
+footer{margin-top:26px;text-align:center;color:var(--muted);font-size:14px}
+@keyframes bob{50%{transform:translateY(-6px) rotate(4deg)}}
+@keyframes pop{50%{transform:scale(1.12)}}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media(max-width:480px){.big{font-size:68px}.q{font-size:23px}.opt{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div class="logo" onclick="home()"><span class="m">🐢</span><div><h1>Bé Vui Học</h1><small>Lớp 2 • Chương trình mới</small></div></div>
+ <div class="stars">⭐ <span id="tot">0</span></div>
+</header>
+
+<main id="home">
+ <div class="hello"><span class="m">🐢</span><div><b>Chào bạn nhỏ! Mình là Rùa Vàng Hồ Gươm.</b>Hôm nay mình cùng học và chơi nhé! Làm đúng sẽ nhận được ⭐</div></div>
+ <div class="grid" id="grid"></div>
+</main>
+
+<main id="game" class="hide">
+ <div class="top"><button class="back" onclick="home()">← Về nhà</button><div class="bar"><i id="pb"></i></div><b id="cnt">1/5</b></div>
+ <div class="card" id="play">
+  <div class="big" id="e"></div><div class="q" id="q"></div><div class="opts" id="o"></div>
+  <div class="fb" id="fb"></div><button class="next hide" id="nx">Tiếp tục ➜</button>
+ </div>
+ <div class="card res hide" id="res"></div>
+</main>
+
+<main id="piano" class="hide">
+ <div class="top"><button class="back" onclick="home()">← Về nhà</button></div>
+ <div class="card"><div class="q">🎹 Đàn Piano Âm nhạc</div><div>Chạm vào phím để nghe: Đô – Rê – Mi – Fa – Sol – La – Si – Đô. Thử đàn bài “Đô Rê Mi” nhé!</div><div class="keys" id="keys"></div></div>
+</main>
+<main id="menu" class="hide"><div class="top"><button class="back" onclick="home()">← Về nhà</button></div><div class="card"><div class="big" id="me"></div><div class="q" id="mn"></div><div id="mb"></div></div></main>
+<main id="lesson" class="hide"><div class="top"><button class="back" onclick="showMenu()">← Quay lại</button></div><div class="card" id="lb"></div></main>
+<footer>Làm bằng ❤️ cho các bạn học sinh lớp 2 Hà Nội</footer>
+</div>
+
+<script>
+const R=n=>Math.floor(Math.random()*n),pick=a=>a[R(a.length)],shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+const $=id=>document.getElementById(id);
+const nums=a=>{const s=new Set([a]);while(s.size<3){const v=a+pick([-10,-5,-3,-2,-1,1,2,3,5,10]);if(v>=0)s.add(v)}return shuf([...s]).map(String)};
+const mk=(list,n=5)=>shuf(list).slice(0,n);
+
+const toan=()=>Array.from({length:5},()=>{const t=R(4);let a,b,q,r,e=pick(["🧮","🍎","🍬","🎈","⭐"]);
+ if(t==0){a=R(60)+10;b=R(Math.min(35,100-a))+1;q=`${a} + ${b} = ?`;r=a+b}
+ else if(t==1){a=R(80)+20;b=R(a-5)+1;q=`${a} − ${b} = ?`;r=a-b}
+ else if(t==2){a=pick([2,5]);b=R(10)+1;q=`${a} × ${b} = ?`;r=a*b}
+ else{a=R(98)+1;q=`Số liền sau của ${a} là?`;r=a+1}
+ return{e,q,o:nums(r),a:String(r)}});
+
+const vn=mk([["🐢","rùa","dùa"],["🍚","cơm","kơm"],["🌳","cây","xây"],["🏫","trường","chường"],["🐘","voi","voy"],["🐟","cá","ká"],["🌙","trăng","chăng"],["☀️","mặt trời","mặt chời"],["🦋","bướm","bướp"],["📚","sách","xách"],["🚲","xe đạp","se đạp"],["🥛","sữa","xữa"]]).map(([e,a,w])=>({e,q:"Từ nào viết đúng chính tả?",o:shuf([a,w]),a}));
+const VN=()=>mk([["🐢","rùa","dùa"],["🍚","cơm","kơm"],["🌳","cây","xây"],["🏫","trường","chường"],["🐘","voi","voy"],["🐟","cá","ká"],["🌙","trăng","chăng"],["☀️","mặt trời","mặt chời"],["🦋","bướm","bướp"],["📚","sách","xách"],["🚲","xe đạp","se đạp"],["🥛","sữa","xữa"]]).map(([e,a,w])=>({e,q:"Từ nào viết đúng chính tả?",o:shuf([a,w]),a}));
+
+const EN=[["🐱","cat"],["🐶","dog"],["🍎","apple"],["📖","book"],["🐦","bird"],["🐟","fish"],["☀️","sun"],["🌳","tree"],["🥛","milk"],["⚽","ball"],["🚗","car"],["🏠","house"],["🥚","egg"],["🚌","bus"],["🐮","cow"],["🎩","hat"]];
+const en=()=>mk(EN).map(([e,a])=>({e,q:"What is this?",o:shuf([a,...shuf(EN.filter(x=>x[1]!=a)).slice(0,2).map(x=>x[1])]),a}));
+
+const TN=[["🏯","Tháp Rùa nằm giữa hồ nào ở Hà Nội?",["Hồ Gươm","Hồ Tây","Hồ Tuyền Lâm"],"Hồ Gươm"],["🇻🇳","Thủ đô của nước Việt Nam là?",["Hà Nội","Huế","Đà Nẵng"],"Hà Nội"],["👀","Bộ phận nào giúp em nhìn thấy?",["Mắt","Tai","Mũi"],"Mắt"],["👃","Bộ phận nào giúp em ngửi mùi?",["Mũi","Tay","Chân"],"Mũi"],["🐔","Con vật nào đẻ trứng?",["Con gà","Con mèo","Con chó"],"Con gà"],["🌅","Mặt trời mọc ở hướng nào?",["Đông","Tây","Bắc"],"Đông"],["🍜","Món ăn nổi tiếng của Hà Nội là?",["Phở","Pizza","Sushi"],"Phở"],["🌱","Cây cần gì để lớn lên?",["Nước và ánh sáng","Kẹo và bánh","Đồ chơi"],"Nước và ánh sáng"],["☔","Trời mưa em nên mang theo gì?",["Ô (dù)","Quạt","Kính bơi"],"Ô (dù)"],["🦷","Em nên đánh răng mấy lần mỗi ngày?",["2 lần","0 lần","10 lần"],"2 lần"],["👨‍👩‍👧","Bố, mẹ, ông, bà, anh, chị là những người trong…",["Gia đình","Lớp học","Sở thú"],"Gia đình"]];
+const tn=()=>mk(TN).map(([e,q,o,a])=>({e,q,o:shuf(o),a}));
+
+const DD=[["🗑️","Bỏ rác đúng nơi quy định",1],["👵","Chào ông bà khi đi học về",1],["🚦","Sang đường khi đèn đỏ",0],["🤥","Nói dối cô giáo",0],["🤝","Giúp bạn nhặt đồ bị rơi",1],["📺","Xem tivi đến tận khuya",0],["🌸","Bẻ cành, hái hoa ở công viên",0],["😊","Nói “cảm ơn” khi được giúp đỡ",1],["🙋","Giữ trật tự khi cô giáo giảng bài",1],["😠","Giành đồ chơi của bạn",0],["🧹","Tự dọn đồ chơi sau khi chơi",1]];
+const dd=()=>mk(DD).map(([e,q,v])=>({e,q:q+" — việc này…",o:["👍 Nên","👎 Không nên"],a:v?"👍 Nên":"👎 Không nên"}));
+
+const MT=[["🔴🟡","Đỏ trộn với vàng ra màu gì?",["Cam","Xanh lá","Tím"],"Cam"],["🔵🟡","Xanh dương trộn với vàng ra màu gì?",["Xanh lá","Cam","Nâu"],"Xanh lá"],["🔴🔵","Đỏ trộn với xanh dương ra màu gì?",["Tím","Vàng","Xanh lá"],"Tím"],["🔴⚪","Đỏ trộn với trắng ra màu gì?",["Hồng","Xanh","Đen"],"Hồng"],["🍌","Quả chuối chín có màu gì?",["Vàng","Tím","Xanh dương"],"Vàng"],["🌿","Lá cây thường có màu gì?",["Xanh lá","Đỏ","Hồng"],"Xanh lá"],["🌈","Cầu vồng có mấy màu?",["7","3","12"],"7"],["🎨","Ba màu chính là đỏ, vàng và…",["Xanh dương","Xanh lá","Tím"],"Xanh dương"]];
+const mt=()=>mk(MT).map(([e,q,o,a])=>({e,q,o:shuf(o),a}));
+
+const cq10=()=>Array.from({length:5},()=>{let a,x;do{a=R(8)+2;x=R(8)+2}while(a+x<11);return{e:pick(["🧮","🍎","🍬","🎈"]),q:`${a} + ${x} = ?`,o:nums(a+x),a:String(a+x)}});
+const tq10=()=>Array.from({length:5},()=>{let A,x;do{A=R(8)+11;x=R(8)+2}while(A-x>9);return{e:pick(["🧮","🍓","🍭","🎈"]),q:`${A} − ${x} = ?`,o:nums(A-x),a:String(A-x)}});
+const DV=[["✏️","Thân bút chì có hình dáng thế nào?",["Hình trụ tròn, thon dài","Hình vuông","Hình tròn dẹt"],"Hình trụ tròn, thon dài"],["📏","Cây bút chì trong bài dài khoảng bao nhiêu?",["17 cm","1 m","5 mm"],"17 cm"],["🟢","Thân bút chì trong bài có màu gì?",["Xanh lá","Vàng","Tím"],"Xanh lá"],["🪵","Bút chì làm bằng chất liệu gì?",["Gỗ, ruột chì mềm","Thủy tinh","Vải"],"Gỗ, ruột chì mềm"],["🧽","Cục tẩy dùng để làm gì?",["Xóa nét vẽ sai","Cắt giấy","Đo độ dài"],"Xóa nét vẽ sai"],["🎒","Dùng xong, em bảo quản đồ vật thế nào?",["Vệ sinh, cất vào hộp cẩn thận","Vứt dưới sàn","Để ngoài mưa"],"Vệ sinh, cất vào hộp cẩn thận"],["🖼️","Đồ vật dùng để vẽ giúp bức tranh…",["Rõ nét và đẹp hơn","Bị lem","Bị rách"],"Rõ nét và đẹp hơn"],["📝","Khi giới thiệu đồ vật, em nên tả…",["Đặc điểm nổi bật nhất","Tất cả chi tiết thật dài","Không cần tả"],"Đặc điểm nổi bật nhất"],["1️⃣","Bước 1 của bài giới thiệu đồ vật là gì?",["Nói đồ vật đó là gì","Nêu tác dụng","Nêu cách bảo quản"],"Nói đồ vật đó là gì"],["🖍️","Đồ vật nào dùng để tô màu?",["Bút màu","Thước kẻ","Cục tẩy"],"Bút màu"]];
+const tvDV=()=>mk(DV).map(([e,q,o,a])=>({e,q,o:shuf(o),a}));
+let tab=0;
+const LES={
+toan:()=>{const add=tab==0;let h=`<div class="q">${add?"Bảng cộng qua 10":"Bảng trừ qua 10"}</div><div class="tabs"><button class="tab ${add?"on":""}" onclick="tab=0;learn()">➕ Cộng qua 10</button><button class="tab ${add?"":"on"}" onclick="tab=1;learn()">➖ Trừ qua 10</button></div><div class="tw"><div class="tb">`;
+ for(let x=2;x<=9;x++)for(let c=0;c<8;c++){const f=add?9-c:11+c,ok=add?f+x>=11:x>=f-9;h+=ok?`<div class="tc ${c%2?"y":"g"}" onclick="this.classList.toggle('on')">${f} ${add?"+":"−"} ${x} = ${add?f+x:f-x}</div>`:`<div class="tc e">.</div>`}
+ h+=`</div></div><div>👆 Chạm vào phép tính để tô sáng và học thuộc nhé! (vuốt ngang để xem hết bảng)</div><div class="tip">💡 <b>Mẹo:</b> ${add?"9 + 4 → tách 4 = 1 + 3 → 9 + 1 = 10 → 10 + 3 = <b>13</b>":"13 − 4 → tách 13 = 10 + 3 → 10 − 4 = 6 → 6 + 3 = <b>9</b>"}</div><button class="btn" style="--c:${S.c}" onclick="play(${tab})">🎮 Luyện tập ngay</button>`;return h},
+tv:()=>`<div class="q">✏️ Giới thiệu một đồ vật dùng để vẽ</div><div>Quan sát kĩ đồ vật rồi trả lời 4 gợi ý sau:</div>
+<div class="step"><b>1. Giới thiệu đồ vật</b><ul><li>Đồ vật là gì? (bút chì, bút màu, giấy vẽ, cục tẩy, thước kẻ, màu nước…)</li><li>Em được mua hay được tặng nhân dịp nào?</li></ul></div>
+<div class="step"><b>2. Nêu đặc điểm</b><ul><li>Hình dáng: trụ tròn, thon dài</li><li>Kích thước: dài khoảng 17 cm</li><li>Màu sắc: thân xanh lá, đuôi đỏ</li><li>Chất liệu: gỗ, ruột chì mềm</li><li>⭐ Chú ý: chỉ tả đặc điểm nổi bật nhất, không tả quá dài.</li></ul></div>
+<div class="step"><b>3. Cách sử dụng</b><ul><li>Dùng khi nào? (giờ vẽ, khi vẽ tranh…)</li><li>Dùng như thế nào? (vẽ khung, tô màu, xóa nét sai…)</li><li>Bảo quản ra sao? (vệ sinh, cất vào hộp cẩn thận)</li></ul></div>
+<div class="step"><b>4. Nêu tác dụng</b><ul><li>Giúp em không sợ vẽ sai</li><li>Giúp bức tranh tươi sáng hơn</li><li>Giúp bức tranh rõ nét và đẹp hơn</li></ul></div>
+<div class="tip">🐢 Đồ vật tuy nhỏ bé nhưng giúp em tạo nên những bức tranh thật đẹp và ý nghĩa!</div><button class="btn" style="--c:${S.c}" onclick="play(1)">🎮 Luyện tập ngay</button>`};
+function learn(){show("lesson");$("lb").innerHTML=LES[S.lesson]()}
+function showMenu(){["menu","lesson"].forEach(x=>$(x).style.setProperty("--c",S.c));show("menu");$("me").textContent=S.e;$("mn").textContent=S.n;
+ $("mb").innerHTML=(S.lesson?`<button class="btn" style="--c:${S.c}" onclick="learn()">📚 Bài học</button><br>`:"")+(S.games||[]).map((g,k)=>`<button class="btn" style="--c:${S.c}" onclick="play(${k})">🎮 ${g.n}</button>`).join("<br>")}
+const SUBJ=[
+ {id:"toan",n:"Toán",e:"🧮",c:"#ef476f",d:"Bảng cộng, trừ qua 10, bảng nhân",lesson:"toan",games:[{n:"Cộng qua 10",g:cq10},{n:"Trừ qua 10",g:tq10},{n:"Toán tổng hợp",g:toan}]},
+ {id:"tv",n:"Tiếng Việt",e:"📖",c:"#f78c1f",d:"Giới thiệu đồ vật, chính tả",lesson:"tv",games:[{n:"Chính tả",g:VN},{n:"Giới thiệu đồ vật",g:tvDV}]},
+ {id:"en",n:"Tiếng Anh",e:"🔤",c:"#118ab2",d:"Học từ vựng qua hình",g:en},
+ {id:"tn",n:"Tự nhiên & Xã hội",e:"🌳",c:"#2fa36b",d:"Gia đình, cơ thể, Hà Nội",g:tn},
+ {id:"dd",n:"Đạo đức",e:"💖",c:"#9b5de5",d:"Việc nên – không nên",g:dd},
+ {id:"mt",n:"Mỹ thuật",e:"🎨",c:"#e76f9a",d:"Màu sắc kỳ diệu",g:mt},
+ {id:"am",n:"Âm nhạc",e:"🎵",c:"#3d5af1",d:"Chơi đàn piano",piano:1}
+];
+let stars=0,best={};
+try{stars=+localStorage.getItem("bvh_stars")||0;best=JSON.parse(localStorage.getItem("bvh_best")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("bvh_stars",stars);localStorage.setItem("bvh_best",JSON.stringify(best))}catch(e){}};
+const show=id=>["home","game","piano","menu","lesson"].forEach(x=>$(x).classList.toggle("hide",x!=id));
+
+function home(){show("home");$("tot").textContent=stars;
+ $("grid").innerHTML=SUBJ.map(s=>`<button class="sub" style="--c:${s.c}" onclick="open_('${s.id}')"><span class="e">${s.e}</span><b>${s.n}</b><span class="d">${s.d}</span>${s.piano?"":`<span class="s">Kỷ lục: ${best[s.id]||0}/5 ⭐</span>`}</button>`).join("")}
+
+let S,Q,i,sc,lock,K=0;
+function open_(id){S=SUBJ.find(x=>x.id==id);if(!S.piano&&(S.lesson||S.games)){showMenu();return}play(0)}
+function play(k){K=k;
+ if(S.piano){show("piano");return}
+ document.querySelector("#game").style.setProperty("--c",S.c);
+ Q=(S.games?S.games[K].g:S.g)();i=0;sc=0;show("game");$("res").classList.add("hide");$("play").classList.remove("hide");ask()}
+
+function ask(){lock=false;const q=Q[i];
+ $("e").textContent=q.e;$("q").textContent=q.q;$("fb").textContent="";$("nx").classList.add("hide");
+ $("cnt").textContent=`${i+1}/${Q.length}`;$("pb").style.width=(i/Q.length*100)+"%";
+ $("o").innerHTML="";
+ q.o.forEach(t=>{const b=document.createElement("button");b.className="opt";b.style.setProperty("--c",S.c);b.textContent=t;b.onclick=()=>answer(b,t);$("o").appendChild(b)})}
+
+function answer(b,t){if(lock)return;lock=true;const q=Q[i];
+ [...$("o").children].forEach(x=>{x.disabled=true;if(x.textContent==q.a)x.classList.add("ok")});
+ if(t==q.a){sc++;$("fb").textContent=pick(["🎉 Giỏi quá!","👏 Chính xác!","🌟 Tuyệt vời!","💪 Đúng rồi!"]);rain(["⭐"],6)}
+ else{b.classList.add("no");$("fb").textContent="🤗 Không sao, đáp án đúng đã sáng lên rồi!"}
+ $("nx").textContent=i==Q.length-1?"Xem kết quả 🏆":"Tiếp tục ➜";$("nx").classList.remove("hide")}
+$("nx").onclick=()=>{i++;i<Q.length?ask():finish()};
+
+function finish(){stars+=sc;best[S.id]=Math.max(best[S.id]||0,sc);save();$("tot").textContent=stars;$("pb").style.width="100%";
+ const m=sc==5?["🏆","Xuất sắc! Con là nhà thông thái nhỏ!"]:sc>=3?["🥳","Giỏi lắm! Cố thêm chút nữa nhé!"]:["🐢","Cố lên nào! Rùa chậm mà chắc, chơi lại con sẽ giỏi hơn!"];
+ $("play").classList.add("hide");const r=$("res");r.classList.remove("hide");
+ r.innerHTML=`<div class="big">${m[0]}</div><div class="q">${m[1]}</div><div class="st">${"⭐".repeat(sc)}${"☆".repeat(5-sc)}</div><p>Con được <b>${sc}</b> ⭐ môn ${S.n}</p><button class="btn" style="--c:${S.c}" onclick="play(K)">🔁 Chơi lại</button><button class="btn" style="--c:#6b6f85" onclick="home()">🏠 Về nhà</button>`;
+ if(sc>=3)rain(["🎉","⭐","🎈","✨"],22)}
+
+function rain(a,n){for(let k=0;k<n;k++){const f=document.createElement("div");f.className="fall";f.textContent=pick(a);f.style.left=R(95)+"vw";f.style.animationDelay=Math.random()*.8+"s";document.body.appendChild(f);setTimeout(()=>f.remove(),3400)}}
+
+/* Piano */
+const NOTES=[["Đô",261.63,"#ef476f"],["Rê",293.66,"#f78c1f"],["Mi",329.63,"#e6b800"],["Fa",349.23,"#2fa36b"],["Sol",392,"#118ab2"],["La",440,"#3d5af1"],["Si",493.88,"#9b5de5"],["Đô",523.25,"#ef476f"]];
+let ac;
+function tone(f){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type="triangle";o.frequency.value=f;g.gain.setValueAtTime(.4,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+1);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+1)}catch(e){}}
+$("keys").innerHTML=NOTES.map((n,k)=>`<button class="key" style="background:${n[2]}" data-k="${k}">${n[0]}</button>`).join("");
+$("keys").addEventListener("pointerdown",e=>{const b=e.target.closest(".key");if(b)tone(NOTES[b.dataset.k][1])});
+home();
+</script>
+</body>
+</html>
